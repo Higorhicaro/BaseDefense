@@ -12,11 +12,17 @@ Soldier::Soldier(){
 	life = 100;
 	ammo = 20;
 	lvl = 1;
+
 	al_init();
 	al_init_image_addon();
-	img = al_load_bitmap("soldier.png");
+
+	img = al_load_bitmap("soldier_down.png");
+
 	al_draw_bitmap(img, posx, posy, 0);
+	
+	al_install_keyboard();
 }
+
 
 int Soldier::getLife(){
 	return life;
@@ -42,8 +48,27 @@ void Soldier::setLvl(){
 	lvl++;
 }
 
-void Soldier::move(double x, double y){
-
+void Soldier::move(int x){
+	switch(x){
+		case 1:
+			posy -= 2;
+			img = al_load_bitmap("soldier_up.png");
+			break;
+		case 2:
+			posy += 2;
+			img = al_load_bitmap("soldier_down.png");
+			break;
+		case 3:
+			posx -= 2;
+			img = al_load_bitmap("soldier_left.png");
+			break;
+		case 4:
+			posx += 2;
+			img = al_load_bitmap("soldier_right.png");
+			break;
+	}
+	al_clear_to_color(al_map_rgb(255, 255, 255));
+	al_draw_bitmap(img, posx, posy, 0);
 }
 
 void Soldier::shoot(){

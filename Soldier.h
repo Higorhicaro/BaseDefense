@@ -22,7 +22,7 @@ class Soldier{
 		void setLife(int a);
 		void setAmmo(int a);
 		void setLvl();
-		void move(double x, double y);
+		void move(int);
 		void shoot();
 };
 
