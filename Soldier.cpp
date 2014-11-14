@@ -51,19 +51,19 @@ void Soldier::setLvl(){
 void Soldier::move(int x){
 	switch(x){
 		case 1:
-			posy -= 2;
+			posy -= 5;
 			img = al_load_bitmap("soldier_up.png");
 			break;
 		case 2:
-			posy += 2;
+			posy += 5;
 			img = al_load_bitmap("soldier_down.png");
 			break;
 		case 3:
-			posx -= 2;
+			posx -= 5;
 			img = al_load_bitmap("soldier_left.png");
 			break;
 		case 4:
-			posx += 2;
+			posx += 5;
 			img = al_load_bitmap("soldier_right.png");
 			break;
 	}
